@@ -1,0 +1,67 @@
+/* .booking-table tr {
+    display: block;
+    float: left;
+} */
+.pending-blogs-page {
+    min-height: 500px;
+}
+.blogs-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.blogs-table th,
+td {
+    text-align: center;
+    padding: 6px;
+    border: 1px solid black;
+}
+
+@media only screen and (max-width: 576px) {
+    .blogs-table table,
+    .blogs-table thead,
+    .blogs-table tbody,
+    .blogs-table th,
+    .blogs-table td,
+    .blogs-table tr {
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    .blogs-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .blogs-table tr {
+        border: 1px solid gray;
+        margin-bottom: 10px;
+    }
+
+    .blogs-table td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.7);
+        position: relative;
+        padding-left: 50%;
+        white-space: normal;
+        text-align: left;
+    }
+
+    .blogs-table td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    .blogs-table td:before {
+        content: attr(data-title);
+    }
+}
