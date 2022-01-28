@@ -8,7 +8,7 @@ const EditBlog = () => {
     console.log(blogInfo);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/blogs/${id}`)
+        fetch(`https://tranquil-thicket-16665.herokuapp.com/blogs/${id}`)
             .then((res) => res.json())
             .then((data) => setBlogInfo(data));
     }, [id]);
@@ -24,7 +24,7 @@ const EditBlog = () => {
     const handleUpdateBlog = (id) => {
         const proceed = window.confirm("Are you sure you want to update?");
         if (proceed) {
-            fetch(`http://localhost:5000/blogs/${id}`, {
+            fetch(`https://tranquil-thicket-16665.herokuapp.com/blogs/${id}`, {
                 method: "PUT",
                 headers: {
                     "content-type": "application/json",

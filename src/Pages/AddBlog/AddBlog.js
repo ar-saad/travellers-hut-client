@@ -9,7 +9,7 @@ const AddBlog = () => {
     const handleAddBlog = (e) => {
         e.preventDefault();
 
-        fetch("http://localhost:5000/blogs", {
+        fetch("https://tranquil-thicket-16665.herokuapp.com/blogs", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

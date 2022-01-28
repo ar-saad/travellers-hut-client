@@ -8,7 +8,7 @@ const PendingBlogs = () => {
 
     useEffect(() => {
         setPendingBlogsLoading(true);
-        fetch("http://localhost:5000/pendingblogs")
+        fetch("https://tranquil-thicket-16665.herokuapp.com/pendingblogs")
             .then((res) => res.json())
             .then((data) => {
                 setBlogsPending(data);
@@ -21,7 +21,7 @@ const PendingBlogs = () => {
             "Are you sure you want to delete this blog?"
         );
         if (proceed) {
-            fetch(`http://localhost:5000/blogs/${id}`, {
+            fetch(`https://tranquil-thicket-16665.herokuapp.com/blogs/${id}`, {
                 method: "DELETE",
             })
                 .then((res) => res.json())
@@ -40,7 +40,7 @@ const PendingBlogs = () => {
             "Are you sure you want to approve this blog?"
         );
         if (proceed) {
-            fetch(`http://localhost:5000/blogs/${id}`, {
+            fetch(`https://tranquil-thicket-16665.herokuapp.com/blogs/${id}`, {
                 method: "PUT",
             })
                 .then((res) => res.json())

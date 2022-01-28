@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from "react";
 import "./ManageBlogs.css";
-import { useHistory, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const ManageBlogs = () => {
     const [blogs, setBlogs] = useState([]);
     const [manageBlogsLoading, setManageBlogsLoading] = useState(false);
-    const history = useHistory();
 
     const handleDeleteBtn = (id) => {
         const proceed = window.confirm(
             "Are you sure you want to delete this blog?"
         );
         if (proceed) {
-            fetch(`http://localhost:5000/blogs/${id}`, {
+            fetch(`https://tranquil-thicket-16665.herokuapp.com/blogs/${id}`, {
                 method: "DELETE",
             })
                 .then((res) => res.json())
@@ -26,13 +25,9 @@ const ManageBlogs = () => {
         }
     };
 
-    // const handleEditBtn = (id) => {
-    //     history.push(`/editBlog/${id}`);
-    // };
-
     useEffect(() => {
         setManageBlogsLoading(true);
-        fetch("http://localhost:5000/manageBlogs")
+        fetch("https://tranquil-thicket-16665.herokuapp.com/manageBlogs")
             .then((res) => res.json())
             .then((data) => {
                 setBlogs(data);
