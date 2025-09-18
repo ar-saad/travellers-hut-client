@@ -2,4 +2,4 @@
 
 ### Travelling blog related website
 
-#### Live website - <https://travellers-hut-100912.netlify.app/>
+#### Live website - <https://travellers-hut.netlify.app/>
